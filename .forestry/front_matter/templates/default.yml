@@ -9,14 +9,6 @@ fields:
   default: default
   config:
     required: true
-- name: logo
-  type: file
-  config:
-    maxSize: '2'
-  label: Logo
-  description: Site Logo
-  default: "/uploads/logo.jpg"
-  hidden: true
 pages:
 - simple.md
 - index.html
