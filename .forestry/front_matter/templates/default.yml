@@ -17,5 +17,5 @@ fields:
   description: Site Logo
   default: "/uploads/logo.jpg"
 pages:
-- index.html
 - simple.md
+- index.html
