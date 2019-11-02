@@ -16,10 +16,6 @@ fields:
   config:
     required: true
   default: Craybuy
-- type: datetime
-  name: date
-  label: date
-  default: now
 - name: coupons
   type: field_group
   config: {}
@@ -78,6 +74,11 @@ fields:
       labelField: 
     label: Coupons
   label: Coupon-Data
+- type: datetime
+  name: date
+  label: date
+  default: now
+  hidden: true
 - type: textarea
   name: headbar
   label: headbar
