@@ -23,14 +23,14 @@ fields:
   name: headbar
   label: headbar
   config:
-    wysiwyg: true
+    wysiwyg: false
     schema:
       format: html-blocks
 - type: textarea
   name: javascript
   label: javascript
   config:
-    wysiwyg: true
+    wysiwyg: false
     schema:
       format: html-blocks
 pages:
