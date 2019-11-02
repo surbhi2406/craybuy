@@ -1,0 +1,62 @@
+---
+---
+@import "{{ site.theme }}";
+
+body {
+  overscroll-behavior: none;
+}
+
+input, button {
+  outline: none;
+}
+
+main {
+  // max-width: 1024px;
+  margin: auto;
+  padding: 10px 0px;
+}
+
+:target {
+  background-color: var(--yellow);
+}
+
+.navbar {
+  padding: 0;
+}
+
+.nav-wrap {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.text-cursive {
+  font-family: cursive;
+}
+
+.nav-link {
+  border-bottom: 2px solid transparent;
+  &:focus, &:hover {
+    border-bottom: 2px solid;
+  }
+}
+
+.img-contain {
+  object-fit: contain;
+}
+
+.img-cover {
+  object-fit: cover;
+}
+
+// Bootstrap Overrides
+.card {
+  cursor: pointer;
+  transition: transform 0.2s;
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+.card-title:before {
+  content: attr(data-label);
+  text-transform: capitalize;
+}

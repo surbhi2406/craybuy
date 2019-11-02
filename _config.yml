@@ -1,0 +1,53 @@
+# SEO
+title: ''
+description: ''
+author: BhavyaSaggi
+email: bhavya.saggi@gmail.com
+logo_name: 'Coupon Store'
+logo: '/uploads/default.svg'
+lang: 'en_IN'
+
+# Social
+social:
+  name: ''
+  links:
+    - https://twitter.com/
+    - https://www.facebook.com/
+    - https://www.linkedin.com/in/
+    - https://github.com/
+
+# OG
+twitter:
+  card: ''
+  username: ''
+facebook:
+  app_id: ''
+  publisher: ''
+  admins: ''
+
+# Misc
+show_downloads: false
+google_site_verification: ''
+google_analytics: ''
+webmaster_verifications:
+  google: ''
+  bing: ''
+  alexa: ''
+  yandex: ''
+  baidu: ''
+
+# Build settings
+sass:
+  style: compressed
+defaults:
+  - scope:
+      path: "" # an empty string here means all files in the project
+    values:
+      layout: "default" # this ensures all content renders with layouts/default.html
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-github-metadata
+  - jekyll-redirect-from
+  - jekyll-admin
+  - jekyll-watch
