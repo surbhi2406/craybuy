@@ -107,20 +107,19 @@
     code: NOCODENEEDED
     logo: "/uploads/logo.png"
     expiry: 2019-11-30 15:16:44 +0000
-  - name: UVW
-    link: "/bar"
-    subtitle: Loren Ipsum
-    desc: Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-      Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-      when an unknown printer took a galley of type and scrambled it to make a type
-      specimen book. It has survived not only five centuries, but also the leap into
-      electronic typesetting, remaining essentially unchanged. It was popularised
-      in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-      and more recently with desktop publishing software like Aldus PageMaker including
-      versions of Lorem Ipsum.
-    code: "456"
+  - name: TIGER ONE
+    link: https://www.tiger-one.eu/en/?a_aid=5da998fd2e6e5
+    subtitle: Buy Cannabis, Vaporizers
+    desc: Buy top quality Cannabis Seeds from Seedsman today. Our range of marijuana
+      seeds is one of the largest online, with more than 3000 varieties of Cannabis
+      Seeds available to buy. Our diverse library of cannabis seeds includes a wide
+      range of feminised seeds, regular seeds, autoflowering seeds as well as potent
+      high THC strains and high CBD medical strains featuring superior genetics from
+      every corner of the globe. You can also keep up to date with the latest Medical
+      Marijuana news on our blog.
+    code: NOCODENEEDED
     logo: "/uploads/default.svg"
-    expiry: 2019-10-31T15:16:44.126+00:00
+    expiry: 2019-11-05 15:16:44 +0000
   - name: XYZ
     link: "/foo"
     subtitle: Loren Ipsum
