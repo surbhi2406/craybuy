@@ -85,7 +85,7 @@
     code: "456"
     logo: "/uploads/default.svg"
     expiry: 2019-10-31T15:16:44.126+00:00
-- name: New
+- name: Entertainment
   coupons:
   - name: STU
     link: "/foo"
