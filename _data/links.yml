@@ -1,5 +1,7 @@
 ---
+- name: Shein
+  link: https://www.shein.in/?aff_id=44184&ref=www&rep=dir&ret=in
 - name: Foo
-  link: /foo
+  link: "/foo"
 - name: Bar
-  link: /bar
+  link: "/bar"
