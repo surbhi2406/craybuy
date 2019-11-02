@@ -1,0 +1,11 @@
+---
+- name: sidebar
+  links:
+  - name: Foo
+    link: /foo
+  - name: Bar
+    link: /bar
+- name: footer
+  coupons:
+  - name: Xyz
+    link: /xyz

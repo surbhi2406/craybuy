@@ -2,6 +2,14 @@
 layout: default
 title: Craybuy
 date: 2018-12-31T18:30:00.000+00:00
+headbar: |-
+  <div id="coupon-typeahead" class='position-relative input-group w-50 hide-sm'>
+    <input id="coupon-typeahead" type='text' class='form-control border-0 rounded-0' aria-label='Search' />
+    <div class='input-group-append'>
+      <span class='input-group-text border-0 bg-white'>🔍</span>
+    </div>
+    <div id="coupon-typeahead-results" class="list-group list-group-flush border-1 rounded-0 position-absolute w-100" style="top:100%;z-index:4;box-shadow: 0px 20px 20px 0px var(--dark);"></div>
+  </div>
 javascript: |-
   function copyCoupon() {
     couponCode.select();
@@ -37,8 +45,37 @@ javascript: |-
   }); $('body').on('click',function(){couponTypeaheadResult.empty()})
 
 ---
+<!-- nav -->
+<nav class='navbar navbar-dark bg-gray-dark'>
+  <div class='nav m-auto justify-content-center'>
+    {%- for section in site.data.coupons -%}
+    <a class='nav-link text-white' href='#{{- section.name | downcase -}}'>{{- section.name -}}</a>
+    {%- endfor -%}
+  </div>
+</nav>
+<main class='container-fluid'>
+{%- for section in site.data.coupons -%}
+{%- assign primaryIndex = forloop.index -%}
+<h2 class='lead text-center mt-6 mb-2' id='{{- section.name | downcase -}}'>{{- section.name -}}</h2>
+<div class='row justify-content-center'>
+{%- for coupon in section.coupons -%}
+{%- assign secondaryIndex = forloop.index | prepend: '-' | prepend: primaryIndex -%}
+<a id="{{secondaryIndex}}" class='card col-md-3 p-0 mx-4 my-2 text-decoration-none shadow-lg' data-toggle='modal' data-target='#couponModal' data-details='{{- coupon | jsonify | escape_once -}}' href='{{- coupon.link -}}' target='_blank'>
+  <img src='{{- coupon.logo | absolute_url -}}' class='card-img-top img-contain mt-2 px-4' alt='{{ coupon.name }}' height='110'>
+  <div class='card-body'>
+    <h3 class='card-title lead' data-label="{{ coupon.name | downcase }}" data-index="{{ secondaryIndex }}"/>
+    <h4 class='card-subtitle text-muted'>{{ coupon.subtitle }}</h4>
+    <div class='card-text d-none'>{{ coupon.desc }}</div>
+    <span class='card-link d-none' href='{{ coupon.link }}'>{{ coupon.name }}</span>
+  </div>
+  <div class='card-footer'>Valid till: {{ coupon.expiry | date: '%a, %b %d' }}</div>
+</a>
+{%- endfor -%}
+</div>
+{%- endfor -%}
+</main>
 <!-- Modal -->
-<div class='modal fade' id='couponModal' tabindex='-1' role='dialog' aria-hidden='true'>
+<aside class='modal fade' id='couponModal' tabindex='-1' role='dialog' aria-hidden='true'>
   <div class='modal-dialog' role='document'>
     <div class='modal-content'>
       <div class='modal-body text-center'>
@@ -64,96 +101,4 @@ javascript: |-
       </div>
     </div>
   </div>
-</div>
-<!-- sidebar -->
-<div class='modal fast' id='sidebar' tabindex='-1' role='dialog' aria-hidden='true'>
-  <div class='modal-dialog modal-dialog-scrollable position-fixed right-0 top-0 bottom-0 w-25 h-100 mh-100 m-0 p-0' role='document'>
-    <div class='modal-content w-100 h-100 mh-100 m-0 border-0 rounded-0 p-0'>
-      <div class='modal-header'>
-        <img src="{{- site.logo | absolute_url -}}" alt="{{- site.logo_name -}}" class="img-contain m-0 p-0" height="34"/>
-        <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
-          <span aria-hidden='true'>&times;</span>
-        </button>
-      </div>
-      <div class="modal-body p-0">
-        <div class="list-group list-group-flush">
-          <a href="#" class="list-group-item list-group-item-action">Cras justo odio</a>
-          <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
-          <a href="#" class="list-group-item list-group-item-action">Vestibulum at eros</a>
-          <a href="#" class="list-group-item list-group-item-action">Cras justo odio</a>
-          <a href="#" class="list-group-item list-group-item-action">Dapibu ac facilisis in</a>
-          <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
-          <a href="#" class="list-group-item list-group-item-action">Porta ac consectetu ac</a>
-          <a href="#" class="list-group-item list-group-item-action">Vestibulum at eros</a>
-          <a href="#" class="list-group-item list-group-item-action">Cras justo odio</a>
-          <a href="#" class="list-group-item list-group-item-action">Dapibu ac facilisis in</a>
-          <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
-          <a href="#" class="list-group-item list-group-item-action">Porta ac consectetu ac</a>
-          <a href="#" class="list-group-item list-group-item-action">Vestibulum at eros</a>
-        </div>
-      </div>
-      <div class='modal-footer'>
-        ©
-      </div>
-    </div>
-  </div>
-</div>
-<!-- main -->
-<nav class='bg-dark'>
-  <div class='d-flex nav-wrap justify-content-around py-4' >
-    <a class='font-weight-bolder h1 text-cursive text-nowrap text-decoration-none text-white w-25 m-0' href='{{- site.url -}}'>
-      <img src="{{- site.logo | absolute_url -}}" alt="{{- site.logo_name -}}" class="img-contain m-0 p-0" height="34"/>
-    </a>
-    <div id="coupon-typeahead" class='position-relative input-group w-50 hide-sm'>
-      <input id="coupon-typeahead" type='text' class='form-control border-0 rounded-0' aria-label='Search' />
-      <div class='input-group-append'>
-        <span class='input-group-text border-0 bg-white'>🔍</span>
-      </div>
-      <div id="coupon-typeahead-results" class="list-group list-group-flush border-1 rounded-0 position-absolute w-100" style="top:100%;z-index:4;box-shadow: 0px 20px 20px 0px var(--dark);"></div>
-    </div>
-    <div class='w-25 text-right'>
-      <button class="btn btn-outline-light" type="button" data-toggle="modal" data-target="#sidebar">☰</button>
-    </div>
-  </div>
-</nav>
-<nav class='navbar navbar-dark bg-gray-dark'>
-  <div class='nav nav-wrap justify-content-center'>
-    {%- for section in site.data.coupons -%}
-    <a class='nav-link text-white' href='#{{- section.name | downcase -}}'>{{- section.name -}}</a>
-    {%- endfor -%}
-  </div>
-</nav>
-<main class='container-fluid'>
-{%- for section in site.data.coupons -%}
-{%- assign primaryIndex = forloop.index -%}
-<h2 class='lead text-center mt-6 mb-2' id='{{- section.name | downcase -}}'>{{- section.name -}}</h2>
-<div class='row justify-content-center'>
-{%- for coupon in section.coupons -%}
-{%- assign secondaryIndex = forloop.index | prepend: '-' | prepend: primaryIndex -%}
-<a id="{{secondaryIndex}}" class='card col-md-3 p-0 mx-4 my-2 text-decoration-none shadow-lg' data-toggle='modal' data-target='#couponModal' data-details='{{- coupon | jsonify | escape_once -}}' href='{{- coupon.link -}}' target='_blank'>
-  <img src='{{- coupon.logo | absolute_url -}}' class='card-img-top img-contain mt-2' alt='{{ coupon.name }}' height='110'>
-  <div class='card-body'>
-    <h3 class='card-title lead' data-label="{{ coupon.name | downcase }}" data-index="{{ secondaryIndex }}"/>
-    <h4 class='card-subtitle text-muted'>{{ coupon.subtitle }}</h4>
-    <div class='card-text d-none'>{{ coupon.desc }}</div>
-    <span class='card-link d-none' href='{{ coupon.link }}'>{{ coupon.name }}</span>
-  </div>
-  <div class='card-footer'>Valid till: {{ coupon.expiry | date: '%a, %b %d' }}</div>
-</a>
-{%- endfor -%}
-</div>
-{%- endfor -%}
-</main>
-<footer class='bg-dark text-white shadow-lg py-6'>
-  <div class='nav-wrap'>
-    <nav class='d-flex flex-wrap justify-content-center'>
-      <a class='text-white m-4' href='#'>Active</a>
-      <a class='text-white m-4' href='#'>Link</a>
-      <a class='text-white m-4' href='#'>Active</a>
-      <a class='text-white m-4' href='#'>Link</a>
-      <a class='text-white m-4' href='#'>Active</a>
-      <a class='text-white m-4' href='#'>Link</a>
-    </nav>
-    is a registered trademark of , Inc. Third-party trademarks are the property of their respective third-party owners. Presence of a third-party trademark does not mean that  has any relationship with that third-party or that the third-party endorses  or its services.
-  </div>
-</footer>
+</aside>

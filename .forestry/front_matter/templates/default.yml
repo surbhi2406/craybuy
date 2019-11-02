@@ -15,6 +15,7 @@ fields:
     maxSize: '2'
   label: Logo
   description: Site Logo
-  default: "/uploads/Green Heart Icon Environment Logo.jpg"
+  default: "/uploads/logo.jpg"
 pages:
+- index.html
 - simple.md
