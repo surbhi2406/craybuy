@@ -5,15 +5,31 @@ fields:
 - type: text
   name: layout
   label: layout
+  config:
+    required: true
+  default: default
+  hidden: true
 - type: text
   name: title
   label: title
+  config:
+    required: true
+  default: Craybuy
 - type: datetime
   name: date
   label: date
+  default: now
 - type: textarea
   name: headbar
   label: headbar
+  config:
+    wysiwyg: true
+    schema:
+      format: html
 - type: textarea
   name: javascript
   label: javascript
+  config:
+    wysiwyg: true
+    schema:
+      format: html
