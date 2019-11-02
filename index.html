@@ -165,7 +165,7 @@ image: ''
 {%- for coupon in section.coupons -%}
 {%- assign secondaryIndex = forloop.index | prepend: '-' | prepend: primaryIndex -%}
 <a id="{{secondaryIndex}}" class='card col-md-3 p-0 mx-4 my-2 text-decoration-none shadow-lg' data-toggle='modal' data-target='#couponModal' data-details='{{- coupon | jsonify | escape_once -}}' href='{{- coupon.link -}}' target='_blank'>
-  <img src='{{- coupon.logo | absolute_url -}}' class='card-img-top img-contain mt-2 px-4' alt='{{ coupon.name }}' height='110'>
+  <img src='{{- coupon.logo | absolute_url -}}' class='card-img-top img-contain mt-2 px-4' alt='{{ coupon.name }}' height='110' loading="lazy">
   <div class='card-body'>
     <h3 class='card-title lead' data-label="{{ coupon.name | downcase }}" data-index="{{ secondaryIndex }}"/>
     <h4 class='card-subtitle h6 text-muted'>{{ coupon.subtitle }}</h4>
@@ -186,7 +186,7 @@ image: ''
         <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
           <span aria-hidden='true'>&times;</span>
         </button>
-        <img id="coupon-logo" class="my-4 w-100 img-contain" src="" height="110"/>
+        <img id="coupon-logo" class="my-4 w-100 img-contain" src="" height="110" loading="lazy"/>
         <div class='modal-title h4' id="coupon-name"></div>
         <div class='modal-title h5 my-2 text-muted' id="coupon-sub"></div>
         <div class="input-group my-4 mx-auto w-50">
