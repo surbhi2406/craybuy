@@ -86,23 +86,5 @@ fields:
     wysiwyg: false
     schema:
       format: html-blocks
-- name: layout
-  type: text
-  config:
-    required: true
-  label: Layout
-  default: default
-  hidden: true
-- name: date
-  type: datetime
-  description: ''
-  config:
-    required: true
-    date_format: 
-    time_format: 
-    display_utc: false
-  label: Date
-  hidden: true
-  default: now
 pages:
 - index.html
