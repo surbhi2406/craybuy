@@ -1,5 +1,5 @@
 ---
-- name: Top
+- name: Clothes
   coupons:
   - name: ABC
     link: " https://www.seedsman.com/en/?a_aid=5da998fd2e6e5"
