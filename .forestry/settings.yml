@@ -13,12 +13,16 @@ sections:
   new_doc_ext: md
   templates:
   - default
-- type: document
-  path: _data/coupons.yml
-  label: Coupons
+- type: directory
+  path: _data
+  label: Data
+  create: none
+  match: "**/*"
+  new_doc_ext: ".yml"
 - type: document
   path: _config.yml
-  label: Config
+  label: Site Config
+  match: "**/*"
 upload_dir: uploads
 public_path: "/uploads"
 front_matter_path: ''
