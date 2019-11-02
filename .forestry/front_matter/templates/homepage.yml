@@ -10,31 +10,17 @@ fields:
     required: true
   default: default
   hidden: true
+- type: datetime
+  name: date
+  label: date
+  default: now
+  hidden: true
 - type: text
   name: title
   label: title
   config:
     required: true
   default: Craybuy
-- type: datetime
-  name: date
-  label: date
-  default: now
-  hidden: true
-- type: textarea
-  name: headbar
-  label: headbar
-  config:
-    wysiwyg: false
-    schema:
-      format: html-blocks
-- type: textarea
-  name: javascript
-  label: javascript
-  config:
-    wysiwyg: false
-    schema:
-      format: html-blocks
 - name: coupons
   type: field_group_list
   fields:
@@ -56,16 +42,19 @@ fields:
       config:
         maxSize: 250
       label: Logo
+      default: "/uploads/logo.jpg"
     - name: link
       type: text
       config:
         required: false
       label: Link
+      default: "#"
     - name: code
       type: text
       config:
         required: false
       label: Code
+      default: NOCODENEEDED
     - name: expiry
       type: datetime
       label: Expiry
@@ -75,6 +64,7 @@ fields:
         date_format: 
         time_format: 
         display_utc: false
+      default: now
     - name: subtitle
       type: text
       config:
@@ -95,5 +85,19 @@ fields:
     max: 
     labelField: 
   label: Coupon-Data
+- type: textarea
+  name: headbar
+  label: headbar
+  config:
+    wysiwyg: false
+    schema:
+      format: html-blocks
+- type: textarea
+  name: javascript
+  label: javascript
+  config:
+    wysiwyg: false
+    schema:
+      format: html-blocks
 pages:
 - index.html
