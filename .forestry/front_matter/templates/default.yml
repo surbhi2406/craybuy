@@ -9,13 +9,16 @@ fields:
   default: default
   config:
     required: true
-- name: logo
-  type: file
+- name: date
+  type: datetime
+  label: Date
+  description: ''
   config:
-    maxSize: '2'
-  label: Logo
-  hidden: true
-  default: "/uploads/logo.jpg"
+    required: true
+    date_format: 
+    time_format: 
+    display_utc: false
+  default: now
 - name: title
   type: text
   config:
