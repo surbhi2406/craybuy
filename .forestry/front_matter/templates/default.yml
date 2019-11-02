@@ -5,5 +5,14 @@ fields:
 - name: layout
   label: Layout
   type: text
-  hidden: false
+  hidden: true
   default: default
+  config:
+    required: true
+- name: logo
+  type: file
+  config:
+    maxSize: '2'
+  label: Logo
+  description: Site Logo
+  default: "/uploads/Green Heart Icon Environment Logo.jpg"
