@@ -164,13 +164,11 @@ image: ''
 <div class='row justify-content-center'>
 {%- for coupon in section.coupons -%}
 {%- assign secondaryIndex = forloop.index | prepend: '-' | prepend: primaryIndex -%}
-<a id="{{secondaryIndex}}" class='card col-md-3 p-0 mx-4 my-2 text-decoration-none shadow-lg' data-toggle='modal' data-target='#couponModal' data-details='{{- coupon | jsonify | escape_once -}}' href='{{- coupon.link -}}' target='_blank'>
+<a id="{{secondaryIndex}}" class='card col-md-3 p-0 mx-4 my-2 text-decoration-none shadow-lg' data-toggle='modal' data-target='#couponModal' data-details='{{- coupon | jsonify | escape_once -}}' href='{{- coupon.link -}}' target='_blank' rel="noopener">
   <img src='{{- coupon.logo | absolute_url -}}' class='card-img-top img-contain mt-2 px-4' alt='{{ coupon.name }}' height='110' loading="lazy">
   <div class='card-body'>
     <h3 class='card-title lead' data-label="{{ coupon.name | downcase }}" data-index="{{ secondaryIndex }}"/>
     <h4 class='card-subtitle h6 text-muted'>{{ coupon.subtitle }}</h4>
-    <div class='card-text d-none'>{{ coupon.desc }}</div>
-    <span class='card-link d-none' href='{{ coupon.link }}'>{{ coupon.name }}</span>
   </div>
   <div class='card-footer bg-info text-white'>Valid till: {{ coupon.expiry | date: '%a, %b %d' }}</div>
 </a>
