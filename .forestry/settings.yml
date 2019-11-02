@@ -17,7 +17,7 @@ sections:
   path: _config.yml
   label: Site Config
 - type: directory
-  path: "."
+  path: assets
   label: Files
   create: all
   match: "**/*"
