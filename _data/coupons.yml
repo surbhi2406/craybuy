@@ -1,14 +1,14 @@
 ---
 - name: Shein
   coupons:
-  - name: Shein
-    link: ''
-    subtitle: ''
+  - name: SHEIN
+    link: https://www.shein.com/campaign/parisshow?aff_id=44184
+    subtitle: 'Extra 15% OFF '
     desc: Shein carries only the most fashionable women's clothes. Find stylish outfits
       for less - shop dresses, tops, jeans and more. Apply your Shein promo codes
       and Shein coupons at checkout for even bigger savings!
-    code: ''
-    logo: "/uploads/SheinLogo.jpg"
+    code: QNQ15
+    logo: "/uploads/Shein Logo.jpg"
     expiry: 2019-11-11 18:30:00 +0000
   - name: ABC
     link: " https://www.seedsman.com/en/?a_aid=5da998fd2e6e5"
