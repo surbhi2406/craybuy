@@ -17,4 +17,4 @@ fields:
   hidden: true
   default: "/uploads/logo.jpg"
 pages:
-  - 404.md
+- 404.md
