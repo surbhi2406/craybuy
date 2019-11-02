@@ -25,11 +25,11 @@ fields:
   config:
     wysiwyg: true
     schema:
-      format: html
+      format: html-blocks
 - type: textarea
   name: javascript
   label: javascript
   config:
     wysiwyg: true
     schema:
-      format: html
+      format: html-blocks
