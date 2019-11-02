@@ -58,3 +58,12 @@ main {
 .img-cover {
   object-fit: cover;
 }
+#sidebar .modal-dialog.modal-dialog-scrollable {
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 33%;
+  @media (max-width: 576px) {
+    width: 95%;
+  }
+}

@@ -25,9 +25,10 @@ javascript: |-
     window.open(couponDetails.link, '_blank').focus()
   }); couponTypeahead.on('keyup',function(e){
     couponTypeaheadResult.empty();
+    var typeaheadValue = (couponTypeahead.val()||'').toLowerCase()
     var r = $(
       'h3.card-title[data-label^="'
-      +(couponTypeahead.val()||'').toLowerCase()
+      +typeaheadValue
       +'"]'
     ).slice(0,5);
     $.each(r, function(ci, cv){
@@ -36,9 +37,14 @@ javascript: |-
         +cv.dataset.index
         +'" class="list-group-item list-group-item-action text-capitalize">'
         +cv.dataset.label
-        +'</li>'
+        +'</a>'
       );
-    })
+    });
+    if(!r.length && typeaheadValue){
+      couponTypeaheadResult.append(
+        '<span class="list-group-item bg-danger text-white">Nothing Found</span>'
+      );
+    }
   }); $('body').on('click',function(){couponTypeaheadResult.empty()})
 date: '2018-12-31T18:30:00.000+00:00'
 coupons:
@@ -144,7 +150,7 @@ image: ''
 
 ---
 <!-- nav -->
-<nav class='navbar navbar-dark bg-gray-dark'>
+<nav class='navbar navbar-dark bg-dark'>
   <div class='nav m-auto justify-content-center'>
     {%- for section in page.coupons -%}
     <a class='nav-link text-white' href='#{{- section.name | downcase -}}'>{{- section.name -}}</a>
@@ -154,7 +160,7 @@ image: ''
 <main class='container-fluid'>
 {%- for section in page.coupons -%}
 {%- assign primaryIndex = forloop.index -%}
-<h2 class='lead text-center mt-6 mb-2' id='{{- section.name | downcase -}}'>{{- section.name -}}</h2>
+<h2 class='lead text-center mt-4 mb-2' id='{{- section.name | downcase -}}'>{{- section.name -}}</h2>
 <div class='row justify-content-center'>
 {%- for coupon in section.coupons -%}
 {%- assign secondaryIndex = forloop.index | prepend: '-' | prepend: primaryIndex -%}
@@ -162,11 +168,11 @@ image: ''
   <img src='{{- coupon.logo | absolute_url -}}' class='card-img-top img-contain mt-2 px-4' alt='{{ coupon.name }}' height='110'>
   <div class='card-body'>
     <h3 class='card-title lead' data-label="{{ coupon.name | downcase }}" data-index="{{ secondaryIndex }}"/>
-    <h4 class='card-subtitle text-muted'>{{ coupon.subtitle }}</h4>
+    <h4 class='card-subtitle h6 text-muted'>{{ coupon.subtitle }}</h4>
     <div class='card-text d-none'>{{ coupon.desc }}</div>
     <span class='card-link d-none' href='{{ coupon.link }}'>{{ coupon.name }}</span>
   </div>
-  <div class='card-footer'>Valid till: {{ coupon.expiry | date: '%a, %b %d' }}</div>
+  <div class='card-footer bg-info text-white'>Valid till: {{ coupon.expiry | date: '%a, %b %d' }}</div>
 </a>
 {%- endfor -%}
 </div>
@@ -186,7 +192,7 @@ image: ''
         <div class="input-group my-4 mx-auto w-50">
           <input id="coupon-code" type="text" class="form-control text-center h3" value="" readonly="" />
           <div class="input-group-append" onclick="javascript:copyCoupon()">
-            <span class="input-group-text bg-blue border-blue text-white">COPY</span>
+            <span class="input-group-text bg-info border-info text-white">COPY</span>
           </div>
         </div>
         <hr/>
