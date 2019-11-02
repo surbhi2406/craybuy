@@ -16,3 +16,5 @@ fields:
   label: Logo
   description: Site Logo
   default: "/uploads/Green Heart Icon Environment Logo.jpg"
+pages:
+- simple.md
