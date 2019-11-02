@@ -9,12 +9,35 @@ fields:
   default: default
   config:
     required: true
-- name: logo
+- name: date
+  type: datetime
+  label: Date
+  description: ''
+  config:
+    required: true
+    date_format: 
+    time_format: 
+    display_utc: false
+  default: now
+- name: title
+  type: text
+  config:
+    required: true
+  label: Title
+- name: description
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Description
+- name: image
   type: file
   config:
-    maxSize: '2'
-  label: Logo
-  hidden: true
+    maxSize: 2
+  label: OG-Image
   default: "/assets/logo.jpg"
 pages:
 - 404.md
