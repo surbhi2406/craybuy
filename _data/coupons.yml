@@ -129,7 +129,7 @@
     code: "123"
     logo: "/uploads/default.svg"
     expiry: 2019-10-31T15:16:44.126+00:00
-- name: Expired
+- name: Finance
   coupons:
   - name: ABC
     link: "/foo"
