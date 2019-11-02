@@ -16,5 +16,36 @@ fields:
   label: Logo
   hidden: true
   default: "/uploads/logo.jpg"
+- name: title
+  type: text
+  config:
+    required: false
+  label: Title
+- name: description
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Description
+- name: image
+  type: file
+  config:
+    maxSize: 250
+  label: OG-Image
+  default: "/uploads/logo.jpg"
+- name: author
+  type: text
+  config:
+    required: false
+  label: Author
+  default: ''
+- name: lang
+  type: text
+  config:
+    required: false
+  label: Language
 pages:
 - 404.md
