@@ -20,32 +20,9 @@ main {
   background-color: var(--yellow);
 }
 
-.navbar {
-  padding: 0;
-}
-
-.nav-wrap {
-  max-width: 1024px;
-  margin: 0 auto;
-}
-
-.text-cursive {
-  font-family: cursive;
-}
-
-.nav-link {
-  border-bottom: 2px solid transparent;
-  &:focus, &:hover {
-    border-bottom: 2px solid;
-  }
-}
-
-.img-contain {
-  object-fit: contain;
-}
-
-.img-cover {
-  object-fit: cover;
+#coupon-typeahead-wrap {
+  height: 38px;
+  overflow: hidden;
 }
 
 // Bootstrap Overrides
@@ -59,4 +36,28 @@ main {
 .card-title:before {
   content: attr(data-label);
   text-transform: capitalize;
+}
+.navbar {
+  padding: 0;
+}
+.nav-link {
+  border-bottom: 2px solid transparent;
+  &:focus, &:hover {
+    border-bottom: 2px solid;
+  }
+}
+
+// Bootstrap Add-ons
+.nav-wrap {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+.text-cursive {
+  font-family: cursive;
+}
+.img-contain {
+  object-fit: contain;
+}
+.img-cover {
+  object-fit: cover;
 }

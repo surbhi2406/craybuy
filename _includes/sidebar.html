@@ -10,19 +10,9 @@
       </div>
       <div class="modal-body p-0">
         <div class="list-group list-group-flush">
-          <a href="#" class="list-group-item list-group-item-action">Cras justo odio</a>
-          <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
-          <a href="#" class="list-group-item list-group-item-action">Vestibulum at eros</a>
-          <a href="#" class="list-group-item list-group-item-action">Cras justo odio</a>
-          <a href="#" class="list-group-item list-group-item-action">Dapibu ac facilisis in</a>
-          <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
-          <a href="#" class="list-group-item list-group-item-action">Porta ac consectetu ac</a>
-          <a href="#" class="list-group-item list-group-item-action">Vestibulum at eros</a>
-          <a href="#" class="list-group-item list-group-item-action">Cras justo odio</a>
-          <a href="#" class="list-group-item list-group-item-action">Dapibu ac facilisis in</a>
-          <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
-          <a href="#" class="list-group-item list-group-item-action">Porta ac consectetu ac</a>
-          <a href="#" class="list-group-item list-group-item-action">Vestibulum at eros</a>
+          {%- for set in site.data.links -%}
+          <a href="{{- set.link -}}" class="list-group-item list-group-item-action">{{- set.name -}}</a>
+          {%- endfor -%}
         </div>
       </div>
       <div class='modal-footer'>
