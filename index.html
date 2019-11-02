@@ -1,23 +1,14 @@
 ---
 layout: default
-title: Welcome
-date: 2018-12-31 18:30:00 +0000
-javascript: >-
+title: Craybuy
+date: 2018-12-31T18:30:00.000+00:00
+javascript: |-
   function copyCoupon() {
     couponCode.select();
     couponCode.setSelectionRange(0, 99999);
     document.execCommand("copy");
     alert("Copied!");
-  }
-  var couponTypeahead = $('input#coupon-typeahead');
-  var couponTypeaheadResult = $('#coupon-typeahead-results');
-  var couponName = document.getElementById('coupon-name');
-  var couponSub = document.getElementById('coupon-sub');
-  var couponCode = document.getElementById('coupon-code');
-  var couponLogo = document.getElementById('coupon-logo');
-  var couponDesc = document.getElementById('coupon-desc');
-  var couponExpires = document.getElementById('coupon-expires');
-  $('#couponModal').on('show.bs.modal', function (e) {
+  } var couponTypeahead = $('input#coupon-typeahead'); var couponTypeaheadResult = $('#coupon-typeahead-results'); var couponName = document.getElementById('coupon-name'); var couponSub = document.getElementById('coupon-sub'); var couponCode = document.getElementById('coupon-code'); var couponLogo = document.getElementById('coupon-logo'); var couponDesc = document.getElementById('coupon-desc'); var couponExpires = document.getElementById('coupon-expires'); $('#couponModal').on('show.bs.modal', function (e) {
     if(!e.relatedTarget.dataset) return;
     var couponDetails = JSON.parse(e.relatedTarget.dataset.details);
     couponName.innerText = couponDetails.name;
@@ -27,8 +18,7 @@ javascript: >-
     couponDesc.innerText = couponDetails.desc;
     couponExpires.innerText = new Date(couponDetails.expiry).toDateString();
     window.open(couponDetails.link, '_blank').focus()
-  });
-  couponTypeahead.on('keyup',function(e){
+  }); couponTypeahead.on('keyup',function(e){
     couponTypeaheadResult.empty();
     var r = $(
       'h3.card-title[data-label^="'
@@ -44,8 +34,8 @@ javascript: >-
         +'</li>'
       );
     })
-  });
-  $('body').on('click',function(){couponTypeaheadResult.empty()})
+  }); $('body').on('click',function(){couponTypeaheadResult.empty()})
+
 ---
 <!-- Modal -->
 <div class='modal fade' id='couponModal' tabindex='-1' role='dialog' aria-hidden='true'>
