@@ -19,20 +19,15 @@
     code: 11SHHK
     logo: "/uploads/Shein Logo.jpg"
     expiry: 2019-11-12 15:16:44 +0000
-  - name: DEF
-    link: "/bar"
-    subtitle: Loren Ipsum
-    desc: Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-      Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-      when an unknown printer took a galley of type and scrambled it to make a type
-      specimen book. It has survived not only five centuries, but also the leap into
-      electronic typesetting, remaining essentially unchanged. It was popularised
-      in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-      and more recently with desktop publishing software like Aldus PageMaker including
-      versions of Lorem Ipsum.
-    code: "456"
-    logo: "/uploads/default.svg"
-    expiry: 2019-10-31T15:16:44.126+00:00
+  - name: SHEIN Canada
+    link: https://www.shein.com/?aff_id=44184
+    subtitle: Get CA$9 off over CA$90
+    desc: Shein carries the most fashionable women's, men's and kids clothes. Find
+      stylish outfits for less - shop dresses, tops, jeans and more. Apply your Shein
+      promo codes and Shein coupons at checkout for even bigger savings!
+    code: NEON9
+    logo: "/uploads/Shein Logo.jpg"
+    expiry: 2024-08-08 15:16:44 +0000
   - name: GHI
     link: "/foo"
     subtitle: Loren Ipsum
