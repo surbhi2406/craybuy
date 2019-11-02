@@ -80,6 +80,14 @@
     expiry: 2019-11-13 15:16:44 +0000
 - name: Crypto
   coupons:
+  - name: Changelly
+    link: https://changelly.com/?ref_id=jaq8yj1gk3suo0es
+    subtitle: Trade Cryptocurrencies
+    desc: 'Changelly is the best platform for selling and buying Bitcoins. They are
+      a user friendly platform which makes trading of Bitcoins very easy. '
+    code: NOCODENEEDED
+    logo: "/uploads/Screen Shot 2019-11-02 at 4.26.14 PM.png"
+    expiry: 2019-12-30 18:30:00 +0000
   - name: BTC CLICKS
     link: https://btcclicks.com/?r=bf35b2da
     subtitle: Earn Bitcoins
