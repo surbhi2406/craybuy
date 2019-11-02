@@ -1,22 +1,18 @@
-# SEO
+---
 title: ''
 description: ''
 author: CrayBuy
 email: craybuy@gmail.com
-logo_name: 'Coupon Store'
-logo: '/uploads/logo.svg'
-lang: 'en_IN'
-
-# Social
+logo_name: Coupon Store
+logo: "/uploads/logo.png"
+lang: en_IN
 social:
   name: ''
   links:
-    - https://twitter.com/
-    - https://www.facebook.com/
-    - https://www.linkedin.com/in/
-    - https://github.com/
-
-# OG
+  - https://twitter.com/
+  - https://www.facebook.com/
+  - https://www.linkedin.com/in/
+  - https://github.com/
 twitter:
   card: ''
   username: ''
@@ -24,8 +20,6 @@ facebook:
   app_id: ''
   publisher: ''
   admins: ''
-
-# Misc
 show_downloads: false
 google_site_verification: ''
 google_analytics: ''
@@ -35,19 +29,16 @@ webmaster_verifications:
   alexa: ''
   yandex: ''
   baidu: ''
-
-# Build settings
 sass:
   style: compressed
 defaults:
-  - scope:
-      path: "" # an empty string here means all files in the project
-    values:
-      layout: "default" # this ensures all content renders with layouts/default.html
-
+- scope:
+    path: ''
+  values:
+    layout: default
 plugins:
-  - jekyll-seo-tag
-  - jekyll-github-metadata
-  - jekyll-redirect-from
-  - jekyll-admin
-  - jekyll-watch
+- jekyll-seo-tag
+- jekyll-github-metadata
+- jekyll-redirect-from
+- jekyll-admin
+- jekyll-watch
