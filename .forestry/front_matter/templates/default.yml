@@ -16,6 +16,7 @@ fields:
   label: Logo
   description: Site Logo
   default: "/uploads/logo.jpg"
+  hidden: true
 pages:
 - simple.md
 - index.html
