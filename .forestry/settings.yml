@@ -16,7 +16,6 @@ sections:
 - type: document
   path: _data/links.yml
   label: Links
-  match: "**/*"
 - type: document
   path: _config.yml
   label: Site Config
