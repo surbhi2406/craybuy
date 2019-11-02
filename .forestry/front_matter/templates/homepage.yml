@@ -3,6 +3,11 @@ label: homepage
 hide_body: false
 display_field: title
 fields:
+- name: seo
+  type: include
+  config: {}
+  template: default
+  label: SEO
 - name: coupons
   type: field_group_list
   fields:
@@ -81,10 +86,5 @@ fields:
     wysiwyg: false
     schema:
       format: html-blocks
-- name: seo
-  type: include
-  config: {}
-  template: default
-  label: SEO
 pages:
 - index.html
