@@ -3,24 +3,6 @@ label: homepage
 hide_body: false
 display_field: title
 fields:
-- type: text
-  name: layout
-  label: layout
-  config:
-    required: true
-  default: default
-  hidden: true
-- type: datetime
-  name: date
-  label: date
-  default: now
-  hidden: true
-- type: text
-  name: title
-  label: title
-  config:
-    required: true
-  default: Craybuy
 - name: coupons
   type: field_group_list
   fields:
@@ -99,5 +81,10 @@ fields:
     wysiwyg: false
     schema:
       format: html-blocks
+- name: seo
+  type: include
+  config: {}
+  template: default
+  label: SEO
 pages:
 - index.html
