@@ -15,7 +15,7 @@ sections:
   label: Sections
   create: none
   match: "**/*"
-  new_doc_ext: ".html"
+  new_doc_ext: html
 - type: document
   path: _data/links.yml
   label: Links
