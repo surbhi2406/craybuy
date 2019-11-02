@@ -4,29 +4,23 @@ auto_deploy: true
 admin_path: ''
 webhook_url: 
 sections:
-- type: directory
-  path: "."
-  label: All
-  create: all
-  match: "**/*"
 - type: jekyll-pages
   label: Pages
   create: documents
   new_doc_ext: md
   templates:
   - default
-- type: directory
-  path: _includes
-  label: Sections
-  create: none
-  match: "**/*"
-  new_doc_ext: html
 - type: document
   path: _data/links.yml
   label: Links
 - type: document
   path: _config.yml
   label: Site Config
+- type: directory
+  path: "."
+  label: Files
+  create: all
+  match: "**/*"
 upload_dir: uploads
 public_path: "/uploads"
 front_matter_path: ''
