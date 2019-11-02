@@ -16,5 +16,3 @@ fields:
   label: Logo
   hidden: true
   default: "/uploads/logo.jpg"
-pages:
-- simple.md
