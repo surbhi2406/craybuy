@@ -183,7 +183,7 @@ image: ''
     <h3 class='card-title lead' data-label="{{ coupon.name | downcase }}" data-index="{{ secondaryIndex }}">{{- coupon.name -}}</h3>
     <h4 class='card-subtitle h6 text-muted'>{{ coupon.subtitle }}</h4>
   </div>
-  <div class='card-footer bg-info text-white'>Valid till: {{ coupon.expiry | date: '%a, %b %d' }}</div>
+  <div class='card-footer bg-info text-white'>Valid till: {{ coupon.expiry | date_to_string }}</div>
 </a>
 {%- endfor -%}
 </div>
