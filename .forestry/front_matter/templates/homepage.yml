@@ -43,11 +43,8 @@ fields:
       label: Code
       default: NOCODENEEDED
     - name: isNew
-      type: text
-      config:
-        required: false
+      type: boolean
       label: isNew
-      default: false
     - name: expiry
       type: datetime
       label: Expiry
