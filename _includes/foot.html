@@ -7,6 +7,11 @@
     Craybuy is a registered trademark of Craybuy, Inc. Third-party trademarks are the property of their respective third-party owners. Presence of a third-party trademark does not mean that  has any relationship with that third-party or that the third-party endorses Crazybuy or its services.
   </div>
 </footer>
+<aside id="social-share">
+  <span class="icon-facebook"></span>
+  <span class="icon-twitter"></span>
+  <span class="icon-linkedin"></span>
+</aside>
 {% if site.google_analytics %}
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -23,6 +28,28 @@
 function toAbsolute(url) {
   return (url.indexOf('http')===0) ? url : '{{ "/" | absolute_url }}'+url.replace(/^\//,'');
 }
+$('body').on('click', 'span[class^="icon-"]', function(e){
+  var type = e.target.className.replace(/^icon-/i,'')
+  var shareUrl = '';
+  var currUrl = encodeURIComponent(document.location.href);
+  var currTitle = document.title;
+  switch(type) {
+    case 'facebook':
+      shareUrl="https://www.facebook.com/sharer/sharer.php?u="+currUrl+"&t="+currTitle;
+      break;
+    case 'twitter':
+      shareUrl="https://twitter.com/share?url="+currUrl+"&text="+currTitle;
+      break;
+    case 'linkedin':
+      shareUrl="https://www.linkedin.com/shareArticle?mini=true&url="+currUrl+"&title="+currTitle;
+      break;
+  }
+  shareUrl && window.open(
+    shareUrl,
+    '_blank',
+    'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600'
+  ).focus();
+});
 {{- page.javascript -}}
 </script>
 </body>

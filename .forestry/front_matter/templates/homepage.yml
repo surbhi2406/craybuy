@@ -42,6 +42,12 @@ fields:
         required: false
       label: Code
       default: NOCODENEEDED
+    - name: isNew
+      type: text
+      config:
+        required: false
+      label: isNew
+      default: false
     - name: expiry
       type: datetime
       label: Expiry

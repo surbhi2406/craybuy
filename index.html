@@ -2,11 +2,11 @@
 layout: default
 title: Craybuy
 headbar: "<div id=\"coupon-typeahead-wrap\" class='position-relative input-group w-50
-  hide-sm'>\n  <input id=\"coupon-typeahead\" type='text' class='form-control border-0
-  rounded-0' aria-label='Search' />\n  <div class='input-group-append'>\n    <span
-  class='input-group-text border-0 bg-white'>\U0001F50D</span>\n  </div>\n  <div id=\"coupon-typeahead-results\"
+  hide-sm'>  <input id=\"coupon-typeahead\" type='text' class='form-control border-0
+  rounded-0' aria-label='Search' />  <div class='input-group-append'>    <span
+  class='input-group-text border-0 bg-white'>\U0001F50D</span>  </div>  <div id=\"coupon-typeahead-results\"
   class=\"list-group list-group-flush border-1 rounded-0 position-absolute w-100\"
-  style=\"top:100%;z-index:4;box-shadow: 0px 20px 20px 0px var(--dark);\"></div>\n</div>"
+  style=\"top:100%;z-index:4;box-shadow: 0px 20px 20px 0px var(--dark);\"></div></div>"
 javascript: |-
   function copyCoupon() {
     couponCode.select();
@@ -56,6 +56,7 @@ coupons:
     desc: Shein carries only the most fashionable women's clothes. Find stylish outfits
       for less - shop dresses, tops, jeans and more. Apply your Shein promo codes
       and Shein coupons at checkout for even bigger savings!
+    isNew: true
     code: QNQ15
     logo: "/uploads/Shein Logo.jpg"
     expiry: 2019-11-11T18:30:00.000+00:00
@@ -65,6 +66,7 @@ coupons:
     desc: Shein carries the most fashionable women's, men's and kids clothes. Find
       stylish outfits for less - shop dresses, tops, jeans and more. Apply your Shein
       promo codes and Shein coupons at checkout for even bigger savings!
+    isNew: false
     code: 11SHHK
     logo: "/uploads/Shein Logo.jpg"
     expiry: 2019-11-12T15:16:44.000+00:00
@@ -74,6 +76,7 @@ coupons:
     desc: Shein carries the most fashionable women's, men's and kids clothes. Find
       stylish outfits for less - shop dresses, tops, jeans and more. Apply your Shein
       promo codes and Shein coupons at checkout for even bigger savings!
+    isNew: false
     code: NEON9
     logo: "/uploads/Shein Logo.jpg"
     expiry: 2024-08-08T15:16:44.000+00:00
@@ -83,6 +86,7 @@ coupons:
     desc: Shein carries only the most fashionable women's clothes. Find stylish outfits
       for less - shop dresses, tops, jeans and more. Apply your Shein promo codes
       and Shein coupons at checkout for even bigger savings!
+    isNew: false
     code: 11TH11
     logo: "/uploads/Shein Logo.jpg"
     expiry: 2019-11-12T15:16:44.000+00:00
@@ -98,6 +102,7 @@ coupons:
       high THC strains and high CBD medical strains featuring superior genetics from
       every corner of the globe. You can also keep up to date with the latest Medical
       Marijuana news on our blog.
+    isNew: false
     code: NoCodeNeeded
     logo: "/uploads/logo.png"
     expiry: 2019-11-30T15:16:44.000+00:00
@@ -111,6 +116,7 @@ coupons:
       high THC strains and high CBD medical strains featuring superior genetics from
       every corner of the globe. You can also keep up to date with the latest Medical
       Marijuana news on our blog.
+    isNew: false
     code: NOCODENEEDED
     logo: "/uploads/Screen Shot 2019-11-02 at 1.44.22 PM.png"
     expiry: 2019-11-07T15:16:44.000+00:00
@@ -124,6 +130,7 @@ coupons:
       high THC strains and high CBD medical strains featuring superior genetics from
       every corner of the globe. You can also keep up to date with the latest Medical
       Marijuana news on our blog.
+    isNew: false
     code: NOCODENEEDED
     logo: "/uploads/Screen Shot 2019-11-02 at 1.51.59 PM.png"
     expiry: 2019-11-13T15:16:44.000+00:00
@@ -134,6 +141,7 @@ coupons:
     subtitle: Trade Cryptocurrencies
     desc: 'Changelly is the best platform for selling and buying Bitcoins. They are
       a user friendly platform which makes trading of Bitcoins very easy. '
+    isNew: false
     code: NOCODENEEDED
     logo: "/uploads/Screen Shot 2019-11-02 at 4.26.14 PM.png"
     expiry: 2019-12-30T18:30:00.000+00:00
@@ -142,6 +150,7 @@ coupons:
     subtitle: Earn Bitcoins
     desc: Earn bitcoins in the easiest possible way. Just by sparing 5 mins of your
       time you can earn bitcoins.
+    isNew: true
     code: NOCODENEEDED
     logo: "/uploads/Screen Shot 2019-11-02 at 4.24.08 PM.png "
     expiry: 2019-12-30T18:30:00.000+00:00
@@ -166,9 +175,12 @@ image: ''
 {%- for coupon in section.coupons -%}
 {%- assign secondaryIndex = forloop.index | prepend: '-' | prepend: primaryIndex -%}
 <a id="{{secondaryIndex}}" class='card col-md-3 p-0 mx-4 my-2 text-decoration-none shadow-lg' data-toggle='modal' data-target='#couponModal' data-details='{{- coupon | jsonify | escape_once -}}' href='{{- coupon.link -}}' target='_blank' rel="noopener">
+  {%- if coupon.isNew -%}
+  <div class="ribbon"><span>New</span></div>
+  {%- endif -%}
   <img src='{{- coupon.logo | absolute_url -}}' class='card-img-top img-contain mt-2 px-4' alt='{{ coupon.name }}' height='110' loading="lazy">
   <div class='card-body'>
-    <h3 class='card-title lead' data-label="{{ coupon.name | downcase }}" data-index="{{ secondaryIndex }}"/>
+    <h3 class='card-title lead' data-label="{{ coupon.name | downcase }}" data-index="{{ secondaryIndex }}">{{- coupon.name -}}</h3>
     <h4 class='card-subtitle h6 text-muted'>{{ coupon.subtitle }}</h4>
   </div>
   <div class='card-footer bg-info text-white'>Valid till: {{ coupon.expiry | date: '%a, %b %d' }}</div>
