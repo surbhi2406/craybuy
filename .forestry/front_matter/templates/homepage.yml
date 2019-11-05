@@ -14,8 +14,13 @@ fields:
   - name: name
     type: text
     config:
-      required: false
+      required: true
     label: Name
+  - name: description
+    type: text
+    config:
+      required: false
+    label: Description
   - name: coupons
     type: field_group_list
     fields:

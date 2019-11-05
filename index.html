@@ -1,19 +1,23 @@
 ---
-layout: default
+layout: empty
 title: Craybuy
-headbar: "<div id=\"coupon-typeahead-wrap\" class='position-relative input-group w-50
-  hide-sm'>  <input id=\"coupon-typeahead\" type='text' class='form-control border-0
-  rounded-0' aria-label='Search' />  <div class='input-group-append'>    <span class='input-group-text
-  border-0 bg-white'>\U0001F50D</span>  </div>  <div id=\"coupon-typeahead-results\"
-  class=\"list-group list-group-flush border-1 rounded-0 position-absolute w-100\"
-  style=\"top:100%;z-index:4;box-shadow: 0px 20px 20px 0px var(--dark);\"></div></div>"
 javascript: |-
   function copyCoupon() {
     couponCode.select();
     couponCode.setSelectionRange(0, 99999);
     document.execCommand("copy");
     alert("Copied!");
-  } var couponTypeahead = $('input#coupon-typeahead'); var couponTypeaheadResult = $('#coupon-typeahead-results'); var couponName = document.getElementById('coupon-name'); var couponSub = document.getElementById('coupon-sub'); var couponCode = document.getElementById('coupon-code'); var couponLogo = document.getElementById('coupon-logo'); var couponDesc = document.getElementById('coupon-desc'); var couponExpires = document.getElementById('coupon-expires'); $('#couponModal').on('show.bs.modal', function (e) {
+  }
+  var menuDropDown = $('details#menu-dropdown')
+  var couponTypeahead = $('input#coupon-typeahead');
+  var couponTypeaheadResult = $('#coupon-typeahead-results');
+  var couponName = document.getElementById('coupon-name');
+  var couponSub = document.getElementById('coupon-sub');
+  var couponCode = document.getElementById('coupon-code');
+  var couponLogo = document.getElementById('coupon-logo');
+  var couponDesc = document.getElementById('coupon-desc');
+  var couponExpires = document.getElementById('coupon-expires');
+  $('#couponModal').on('show.bs.modal', function (e) {
     if(!e.relatedTarget.dataset) return;
     var couponDetails = JSON.parse(e.relatedTarget.dataset.details);
     couponName.innerText = couponDetails.name;
@@ -42,10 +46,13 @@ javascript: |-
     });
     if(!r.length && typeaheadValue){
       couponTypeaheadResult.append(
-        '<span class="list-group-item bg-danger text-white">Nothing Found</span>'
+        '<span class="list-group-item bg-info text-white">Nothing Found</span>'
       );
     }
-  }); $('body').on('click',function(){couponTypeaheadResult.empty()})
+  }); $('body').on('click',function(){
+    couponTypeaheadResult.empty();
+    menuDropDown && menuDropDown.removeAttr('open');
+  })
 date: '2018-12-31T18:30:00.000+00:00'
 coupons:
 - name: Shopping
@@ -62,7 +69,7 @@ coupons:
     expiry: 2019-11-11T18:30:00.000+00:00
   - name: SHEIN Canada
     logo: "/uploads/Shein Logo.jpg"
-    link: "#https://www.shein.in/?aff_id=44184"
+    link: "https://www.shein.in/?aff_id=44184"
     code: NEON39
     isNew: false
     expiry: 2026-08-13 18:30:00 +0000
@@ -219,19 +226,55 @@ description: The Online Coupon Store
 image: ''
 
 ---
-<!-- nav -->
-<nav class='navbar navbar-dark bg-dark'>
-  <div class='nav m-auto justify-content-center'>
-    {%- for section in page.coupons -%}
-    <a class='nav-link text-white' href='#{{- section.name | downcase -}}'>{{- section.name -}}</a>
-    {%- endfor -%}
+<header id="nav-header" class='bg-danger'>
+  <div class='d-flex position-relative nav-wrap justify-content-between align-items-center px-2 py-3'>
+    <div id="nav-logo">
+      <a class='font-weight-bolder h1 text-cursive text-nowrap text-decoration-none text-white' href='{{- site.url -}}' style="font-size:48px">
+        {{- site.logo_name -}}
+      </a>
+    </div>
+    <!-- nav -->
+    <nav id="nav-links" class='navbar navbar-dark bg-danger'>
+      <div class='nav m-auto justify-content-center'>
+        {%- for section in page.coupons -%}
+          <a class='nav-link text-white' href='#{{- section.name | downcase -}}'>{{- section.name -}}</a>
+          {% if forloop.index == 4 %}
+          {% break %}
+          {% endif %}
+        {%- endfor -%}
+        <details id="menu-dropdown" class="nav-link text-white position-relative">
+          <summary class="dropdown-title"></summary>
+          <div class="dropdown-summary position-absolute bg-white">
+            {%- for section in page.coupons -%}
+              {% if forloop.index <= 1 %}
+              {% continue %}
+              {% endif %}
+              <a class='nav-link text-danger' href='#{{- section.name | downcase -}}'>{{- section.name -}}</a>
+            {%- endfor -%}
+          </div>
+        </details>
+      </div>
+    </nav>
+    <div id="coupon-typeahead-wrap" class="position-relative input-group">
+      <input id="coupon-typeahead" type="text" class="form-control border-0 rounded-0" aria-label="Search" placeholder="🔍">
+      <div class="input-group-append">
+        <button class="input-group-text btn" type="button" data-toggle="modal" data-target="#sidebar">☰</button>
+      </div>
+      <div id="coupon-typeahead-results" class="typeahead-results list-group list-group-flush border-1 rounded-0 position-absolute w-100"></div>
+    </div>
   </div>
-</nav>
+</header>
 <!-- put banner here -->
 <main class='container-fluid'>
 {%- for section in page.coupons -%}
 {%- assign primaryIndex = forloop.index -%}
-<h2 class='lead text-center mt-4 mb-2' id='{{- section.name | downcase -}}'>{{- section.name -}}</h2>
+<h2 class='text-black-50 text-center text-cursive mt-4 mb-2' id='{{- section.name | downcase -}}'>
+  {%- if section.description -%}
+  {{- section.description -}}
+  {%- else -%}
+  {{- section.name -}}
+  {%- endif -%}
+</h2>
 <div class='row justify-content-center'>
 {%- for coupon in section.coupons -%}
 {%- assign secondaryIndex = forloop.index | prepend: '-' | prepend: primaryIndex -%}
