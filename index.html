@@ -56,6 +56,9 @@ javascript: |-
 date: '2018-12-31T18:30:00.000+00:00'
 coupons:
 - name: Shopping
+  description: |-
+    <div>Shop Today's Trending Deals and Save Big</div>
+    <a href="https://www.shein.com/style/Elegant-sc-00100648.html?aff_id=44184"><img loading="lazy" src="https://img.ltwebstatic.com/images3_acp/2019/11/04/15728491995b1303c82b272331c1826f43d14558bf.gif" alt="Create Your Own Elegance"></a>
   coupons:
   - name: SHEIN
     link: https://www.shein.com/?aff_id=44184
@@ -117,8 +120,22 @@ coupons:
     code: 11TH11
     logo: "/uploads/Shein Logo.jpg"
     expiry: 2019-11-12T15:16:44.000+00:00
-  description: Shop Today's Trending Deals and Save Big
 - name: Travel
+  description: |-
+    <div>Travel</div>
+    <ins class="bookingaff" data-aid="1901909" data-target_aid="1901909" data-prod="banner" data-width="300" data-height="250" data-lang="en">
+        <!-- Anything inside will go away once widget is loaded. -->
+            <a href="//www.booking.com?aid=1901909">Booking.com</a>
+    </ins>
+    <script type="text/javascript">
+        (function(d, sc, u) {
+          var s = d.createElement(sc), p = d.getElementsByTagName(sc)[0];
+          s.type = 'text/javascript';
+          s.async = true;
+          s.src = u + '?v=' + (+new Date());
+          p.parentNode.insertBefore(s,p);
+          })(document, 'script', '//aff.bstatic.com/static/affiliate_base/js/flexiproduct.js');
+    </script>
   coupons:
   - name: Booking.com
     logo: "/uploads/1280px-Booking.com_logo.svg.png"
@@ -148,7 +165,6 @@ coupons:
     subtitle: 'Festive Mega Sale: Now grab at least 20% Off on destination holidays.'
     desc: Grab at least 20% Off on destination holidays. This is applicable only for
       select properties. You can visit any place listed on the landing page.
-  description: ''
 - name: Nutraceuticals
   coupons:
   - name: LEAN Nutraceutical
@@ -162,6 +178,14 @@ coupons:
       products.
   description: ''
 - name: Crypto
+  description: |-
+    <div>Crypto</div>
+    <script type="text/javascript" language="javascript">
+          var aax_size='728x90';
+          var aax_pubname = 'dairyind-21';
+          var aax_src='302';
+        </script>
+        <script type="text/javascript" language="javascript" src="http://c.amazon-adsystem.com/aax2/assoc.js"></script>
   coupons:
   - name: Changelly
     link: https://changelly.com/?ref_id=jaq8yj1gk3suo0es
@@ -181,7 +205,6 @@ coupons:
     code: OFFER ACTIVATED
     logo: "/uploads/Screen Shot 2019-11-02 at 4.24.08 PM.png "
     expiry: 2019-12-30T18:30:00.000+00:00
-  description: ''
 - name: Health
   coupons:
   - name: Seedsman
@@ -229,7 +252,6 @@ coupons:
   description: ''
 description: The Online Coupon Store
 image: ''
-headbar: ''
 
 ---
 <header id="nav-header" class='bg-danger'>
@@ -275,7 +297,7 @@ headbar: ''
 {%- for section in page.coupons -%}
 {%- assign primaryIndex = forloop.index -%}
 <h2 class='text-black-50 text-center text-cursive mt-4 mb-2' id='{{- section.name | downcase -}}'>
-  {%- if section.description -%}
+  {%- if section.description != '' -%}
   {{- section.description -}}
   {%- else -%}
   {{- section.name -}}
@@ -288,7 +310,7 @@ headbar: ''
   {%- if coupon.isNew -%}
   <div class="ribbon"><span>New</span></div>
   {%- endif -%}
-  <img src='{{- coupon.logo | absolute_url -}}' class='card-img-top img-contain mt-2 px-4' alt='{{ coupon.name }}' height='110' loading="lazy">
+  <img loading="lazy" src='{{- coupon.logo | absolute_url -}}' class='card-img-top img-contain mt-2 px-4' alt='{{ coupon.name }}' height='110' loading="lazy">
   <div class='card-body'>
     <h3 class='card-title lead' data-label="{{ coupon.name | downcase }}" data-index="{{ secondaryIndex }}">{{- coupon.name -}}</h3>
     <h4 class='card-subtitle h6 text-muted'>{{ coupon.subtitle }}</h4>
@@ -308,7 +330,7 @@ headbar: ''
         <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
           <span aria-hidden='true'>&times;</span>
         </button>
-        <img id="coupon-logo" class="my-4 w-100 img-contain" src="" height="110" loading="lazy"/>
+        <img loading="lazy" id="coupon-logo" class="my-4 w-100 img-contain" src="" height="110" loading="lazy"/>
         <div class='modal-title h4' id="coupon-name"></div>
         <div class='modal-title h5 my-2 text-muted' id="coupon-sub"></div>
         <div class="input-group my-4 mx-auto w-50">
