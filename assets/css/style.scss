@@ -36,6 +36,12 @@ img {
   @media (max-width: 576px) {
     width: 50%;
   }
+  >:first-child {
+    font-size: 48px;
+    @media (max-width: 576px) {
+      font-size: 38px;
+    }
+  }
 }
 
 #nav-links {
