@@ -17,7 +17,7 @@ fields:
       required: true
     label: Name
   - name: description
-    type: text
+    type: textarea
     config:
       required: false
     label: Description
@@ -80,13 +80,6 @@ fields:
     max: 
     labelField: 
   label: Coupon-Data
-- type: textarea
-  name: headbar
-  label: headbar
-  config:
-    wysiwyg: false
-    schema:
-      format: html-blocks
 - type: textarea
   name: javascript
   label: javascript
