@@ -479,6 +479,5 @@ description: "User Agreement\nThe Terms and Conditions (T&C) contained herein al
   law.\n•\tA statement, under penalty of perjury, that the information in the notice
   of copyright infringement is accurate, and that the complaining party is authorized
   to act on behalf of the owner of the right that is allegedly infringed.\n\n"
-published: false
 
 ---
