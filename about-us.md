@@ -4,7 +4,7 @@ date: 2019-10-31 18:30:00 +0000
 image: ''
 title: About Us
 description: |
-  Crayuy.com was launched in 2018 with the goal to provide best deals and coupons to its visitors. We are also a small network of publishers who collectively promote various offers.
+  Craybuy.com was launched in 2018 with the goal to provide best deals and coupons to its visitors. We are also a small network of publishers who collectively promote various offers.
 
   We want to give our users the best deals and discounts for their favourite brands.
 
