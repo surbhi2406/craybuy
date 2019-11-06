@@ -1,6 +1,6 @@
 ---
 layout: default
-date: 2019-11-06 08:45:40 +0000
+date: 2019-10-31 18:30:00 +0000
 image: ''
 title: About Us
 description: |
@@ -14,6 +14,5 @@ description: |
   In order to start off, You can visit our homepage to find out various stores and the discounts that we offer.
 
   Thank you for dropping by.
-published: false
 
 ---
