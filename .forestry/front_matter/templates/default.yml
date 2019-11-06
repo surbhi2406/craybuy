@@ -40,5 +40,6 @@ fields:
   label: OG-Image
   default: "/assets/logo.jpg"
 pages:
+- privacy-policy-opt-out.md
 - about-us.md
 - 404.md
