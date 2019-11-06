@@ -14,5 +14,6 @@ description: |
   In order to start off, You can visit our homepage to find out various stores and the discounts that we offer.
 
   Thank you for dropping by.
+published: false
 
 ---
