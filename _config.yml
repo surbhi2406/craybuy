@@ -27,7 +27,7 @@ google_analytics: <!-- Global site tag (gtag.js) - Google Analytics --> <script 
   = window.dataLayer || [];   function gtag(){dataLayer.push(arguments);}   gtag('js',
   new Date());    gtag('config', 'UA-151734710-1'); </script>
 webmaster_verifications:
-  google: ''
+  google: google-site-verification=U7zQtn34-GtiWoH_lvldd30KVQEUVFIVrfRg48Z8jM0
   bing: ''
   alexa: ''
   yandex: ''
