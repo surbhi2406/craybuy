@@ -22,10 +22,7 @@ facebook:
   admins: ''
 show_downloads: false
 google_site_verification: ''
-google_analytics: <!-- Global site tag (gtag.js) - Google Analytics --> <script async
-  src="https://www.googletagmanager.com/gtag/js?id=UA-151734710-1"></script> <script>   window.dataLayer
-  = window.dataLayer || [];   function gtag(){dataLayer.push(arguments);}   gtag('js',
-  new Date());    gtag('config', 'UA-151734710-1'); </script>
+google_analytics: UA-151734710-1
 webmaster_verifications:
   google: google-site-verification=U7zQtn34-GtiWoH_lvldd30KVQEUVFIVrfRg48Z8jM0
   bing: ''
