@@ -40,7 +40,10 @@ fields:
   label: OG-Image
   default: "/assets/logo.jpg"
 pages:
+- privacy-policy-opt-out.md
+- about-us.md
 - terms-and-conditions-and-grievance-redressal-policy.md
 - about-us.md
 - privacy-policy-opt-out.md
+- terms-and-conditions-and-grievance-redressal-policy.md
 - 404.md
