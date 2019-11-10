@@ -1,3 +1,7 @@
 ---
-- name: Shein
-  link: https://www.shein.in/?aff_id=44184&ref=www&rep=dir&ret=in
+- name: About Us
+  link: "/about-us"
+- name: Privacy Policy
+  link: "/privacy-policy-opt-out"
+- name: Terms & Conditions
+  link: "/terms-and-conditions-and-grievance-redressal-policy"
