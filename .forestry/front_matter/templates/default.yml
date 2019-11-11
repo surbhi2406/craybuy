@@ -19,6 +19,11 @@ fields:
     time_format: 
     display_utc: false
   default: now
+- name: permalink
+  type: text
+  config:
+    required: false
+  label: Permalink
 - name: title
   type: text
   config:
