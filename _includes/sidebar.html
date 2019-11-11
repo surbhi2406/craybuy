@@ -11,8 +11,8 @@
       <div class="modal-body p-0">
         <div class="list-group list-group-flush">
           {%- for set in site.data.links -%}
-            {%- if set.links -%}
-            <details open>
+            {%- if set.links != empty -%}
+            <details open class="border-top">
               <summary class="list-group-item text-muted">{{- set.name -}}</summary>
               {%- for setLinks in set.links -%}
               <a href="{{- setLinks.link -}}" class="list-group-item list-group-item-action pl-5">{{- setLinks.name -}}</a>
