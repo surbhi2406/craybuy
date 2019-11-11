@@ -10,6 +10,7 @@ sections:
   new_doc_ext: md
   templates:
   - default
+  - homepage
 - type: document
   path: _data/links.yml
   label: Links
