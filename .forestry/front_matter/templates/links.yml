@@ -9,6 +9,26 @@ fields:
   - type: text
     name: name
     label: name
+    config:
+      required: true
   - type: text
     name: link
     label: link
+  - name: links
+    type: field_group_list
+    fields:
+    - name: name
+      type: text
+      config:
+        required: false
+      label: name
+    - name: link
+      type: text
+      config:
+        required: false
+      label: link
+    config:
+      min: 
+      max: 
+      labelField: 
+    label: links
