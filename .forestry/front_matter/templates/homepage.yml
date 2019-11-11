@@ -8,7 +8,7 @@ fields:
   config: {}
   template: default
   label: SEO
-- name: Banner
+- name: banner
   type: field_group_list
   fields:
   - name: name
