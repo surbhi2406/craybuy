@@ -58,6 +58,9 @@ banner:
 - name: Shein
   image: https://img.ltwebstatic.com/images3_acp/2019/11/04/15728491995b1303c82b272331c1826f43d14558bf.gif
   link: https://www.shein.com/style/Elegant-sc-00100648.html?aff_id=44184
+- name: Shein
+  image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQXLIiymLAL-2OADmaw_zIXndQIsTrsUFDi_Q04Punl2L5wLOCu'
+  link: https://www.shein.com/style/Elegant-sc-00100648.html?aff_id=44184
 coupons:
 - name: Shopping
   description: Shop Today's Trending Deals and Save Big
@@ -342,23 +345,15 @@ image: ''
   </div>
 </header>
 <!-- put banner here -->
-<div id="bannerCarousel" class="carousel slide nav-wrap mt-4" data-ride="carousel" data-interval="1500" data-pause="hover">
+<div id="bannerCarousel" class="carousel slide nav-wrap mt-4" data-ride="carousel" data-interval="3000" data-pause="hover">
   <ol class="carousel-indicators">
     {%- for banner in page.banner -%}
-    <li data-target="#bannerCarousel" data-slide-to="{{- forloop.index -}}" 
-    {%- if forloop.first -%}
-      class="active"
-    {%- endif -%}
-    ></li>
+    <li data-target="#bannerCarousel" data-slide-to="{{- forloop.index0 -}}" {% if forloop.first %}class="active"{% endif %}></li>
     {%- endfor -%}
   </ol>
   <div class="carousel-inner">
     {%- for banner in page.banner -%}
-    <a class='d-block carousel-item' href='{{- banner.link -}}'
-    {%- if forloop.first -%}
-      class="active"
-    {%- endif -%}
-    >
+    <a href='{{- banner.link -}}' target="_blank" class='carousel-item {% if forloop.first %}active{% endif %}'>
       <img loading="lazy" class="d-block w-100" src="{{- banner.image -}}" alt="{{- banner.name-}}" height="250">
     </a>
     {%- endfor -%}
