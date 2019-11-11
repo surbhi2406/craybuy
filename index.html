@@ -54,11 +54,14 @@ javascript: |-
     menuDropDown && menuDropDown.removeAttr('open');
   })
 date: '2018-12-31T18:30:00.000+00:00'
+banner:
+- name: Sample
+  image: 'https://img.ltwebstatic.com/images3_acp/2019/11/04/15728491995b1303c82b272331c1826f43d14558bf.gif'
+  link: 'https://www.shein.com/style/Elegant-sc-00100648.html?aff_id=44184'
 coupons:
 - name: Shopping
   description: |-
-    <div>Shop Today's Trending Deals and Save Big</div>
-    <a href="https://www.shein.com/style/Elegant-sc-00100648.html?aff_id=44184"><img loading="lazy" src="https://img.ltwebstatic.com/images3_acp/2019/11/04/15728491995b1303c82b272331c1826f43d14558bf.gif" alt="Create Your Own Elegance"></a>
+    Shop Today's Trending Deals and Save Big
   coupons:
   - name: SHEIN
     logo: "/uploads/Shein Logo.jpg"
@@ -178,7 +181,7 @@ coupons:
     logo: "/uploads/LEAN.png"
     link: https://lean-nutraceuticals.kckb.st/3b2d1901
     code: LEAN10-EJ5EKF
-    isNew: true
+    isNew: false
     expiry: 2019-11-15T18:30:00.000+00:00
     subtitle: 10% off all products.
     desc: Save money by using our discount code and get 10% discount of the best nutraceutical
@@ -302,10 +305,10 @@ image: ''
 
 ---
 <header id="nav-header" class='bg-danger'>
-  <div class='d-flex position-relative nav-wrap justify-content-between align-items-center px-2 py-3'>
+  <div class='d-flex position-relative nav-wrap justify-content-between align-items-center px-2'>
     <div id="nav-logo">
-      <a class='font-weight-bolder h1 text-cursive text-nowrap text-decoration-none text-white' href='{{- site.url -}}'>
-        {{- site.logo_name -}}
+      <a class='font-weight-bolder h1 text-cursive text-nowrap text-decoration-none text-white' href='{{- site.url -}}' label="{{- site.logo_name -}}">
+        <img src="{{site.logo}}" alt="{{- site.logo_name -}}"/>
       </a>
     </div>
     <!-- nav -->
@@ -319,7 +322,7 @@ image: ''
         {%- endfor -%}
         <details id="menu-dropdown" class="nav-link text-white position-relative">
           <summary class="dropdown-title"></summary>
-          <div class="dropdown-summary position-absolute bg-white">
+          <div class="dropdown-summary position-absolute bg-white text-nowrap">
             {%- for section in page.coupons -%}
               {% if forloop.index <= 1 %}
               {% continue %}
@@ -340,6 +343,36 @@ image: ''
   </div>
 </header>
 <!-- put banner here -->
+<div id="bannerCarousel" class="carousel slide nav-wrap" data-ride="carousel" data-interval="1500" data-pause="hover">
+  <ol class="carousel-indicators">
+    {%- for banner in page.banner -%}
+    <li data-target="#bannerCarousel" data-slide-to="{{- forloop.index -}}" 
+    {%- if forloop.first -%}
+      class="active"
+    {%- endif -%}
+    ></li>
+    {%- endfor -%}
+  </ol>
+  <div class="carousel-inner">
+    {%- for banner in page.banner -%}
+    <a class='d-block carousel-item' href='{{- banner.link -}}'
+    {%- if forloop.first -%}
+      class="active"
+    {%- endif -%}
+    >
+      <img loading="lazy" class="d-block w-100" src="{{- banner.image -}}" alt="{{- banner.name-}}">
+    </a>
+    {%- endfor -%}
+  </div>
+  <a class="carousel-control-prev" href="#bannerCarousel" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#bannerCarousel" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
 <main class='container-fluid'>
 {%- for section in page.coupons -%}
 {%- assign primaryIndex = forloop.index -%}

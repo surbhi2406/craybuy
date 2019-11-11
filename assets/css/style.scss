@@ -36,11 +36,9 @@ img {
   @media (max-width: 576px) {
     width: 50%;
   }
-  >:first-child {
-    font-size: 48px;
-    @media (max-width: 576px) {
-      font-size: 38px;
-    }
+  img {
+    height: 66px;
+    padding: 6px 0px;
   }
 }
 

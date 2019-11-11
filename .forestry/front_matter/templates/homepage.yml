@@ -8,6 +8,26 @@ fields:
   config: {}
   template: default
   label: SEO
+- name: Banner
+  type: field_group_list
+  fields:
+  - name: name
+    type: text
+    config: {}
+    label: Name
+  - name: image
+    type: text
+    config: {}
+    label: Image
+  - name: link
+    type: text
+    config: {}
+    label: Link
+  config:
+    min: 
+    max: 
+    labelField: 
+  label: Banner-Data
 - name: coupons
   type: field_group_list
   fields:

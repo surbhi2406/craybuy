@@ -2,6 +2,14 @@
 - name: About Us
   link: "/about-us"
 - name: Privacy Policy
-  link: "/privacy-policy-opt-out"
+  link: "/privacy-policy"
 - name: Terms & Conditions
-  link: "/terms-and-conditions-and-grievance-redressal-policy"
+  link: "/terms-and-conditions"
+- name: Stores
+  links:
+  - name: Shien
+    link: "https://www.shein.com/style/Elegant-sc-00100648.html?aff_id=44184"
+  - name: Shien-US
+    link: "https://www.shein.com/style/Elegant-sc-00100648.html?aff_id=44184"
+  - name: Shien-In
+    link: "https://www.shein.com/style/Elegant-sc-00100648.html?aff_id=44184"

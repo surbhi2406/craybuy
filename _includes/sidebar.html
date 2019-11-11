@@ -2,7 +2,7 @@
 <div class='modal fast' id='sidebar' tabindex='-1' role='dialog' aria-hidden='true'>
   <div class='modal-dialog modal-dialog-scrollable position-fixed h-100 mh-100 m-0 p-0' role='document'>
     <div class='modal-content w-100 h-100 mh-100 m-0 border-0 rounded-0 p-0'>
-      <div class='modal-header'>
+      <div class='modal-header bg-danger rounded-0'>
         <img src="{{- site.logo | absolute_url -}}" alt="{{- site.logo_name -}}" class="img-contain m-0 p-0" height="34"/>
         <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
           <span aria-hidden='true'>&times;</span>
@@ -11,7 +11,16 @@
       <div class="modal-body p-0">
         <div class="list-group list-group-flush">
           {%- for set in site.data.links -%}
-          <a href="{{- set.link -}}" class="list-group-item list-group-item-action">{{- set.name -}}</a>
+            {%- if set.links -%}
+            <details open>
+              <summary class="list-group-item text-muted">{{- set.name -}}</summary>
+              {%- for setLinks in set.links -%}
+              <a href="{{- setLinks.link -}}" class="list-group-item list-group-item-action pl-5">{{- setLinks.name -}}</a>
+              {%- endfor -%}
+            </details>
+            {%- else if set.link -%}
+            <a href="{{- set.link -}}" class="list-group-item list-group-item-action">{{- set.name -}}</a>
+            {%- endif -%}
           {%- endfor -%}
         </div>
       </div>
