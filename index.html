@@ -343,7 +343,7 @@ image: ''
   </div>
 </header>
 <!-- put banner here -->
-<div id="bannerCarousel" class="carousel slide nav-wrap" data-ride="carousel" data-interval="1500" data-pause="hover">
+<div id="bannerCarousel" class="carousel slide nav-wrap mt-4" data-ride="carousel" data-interval="1500" data-pause="hover">
   <ol class="carousel-indicators">
     {%- for banner in page.banner -%}
     <li data-target="#bannerCarousel" data-slide-to="{{- forloop.index -}}" 
@@ -360,7 +360,7 @@ image: ''
       class="active"
     {%- endif -%}
     >
-      <img loading="lazy" class="d-block w-100" src="{{- banner.image -}}" alt="{{- banner.name-}}">
+      <img loading="lazy" class="d-block w-100" src="{{- banner.image -}}" alt="{{- banner.name-}}" height="250">
     </a>
     {%- endfor -%}
   </div>
