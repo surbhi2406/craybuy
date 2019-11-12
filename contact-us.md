@@ -5,7 +5,6 @@ image: "/assets/logo.jpg"
 permalink: contact-us
 title: Contact Us
 description: Contact-Us
-published: false
 
 ---
 Please mail your feedback on **_craybuycoupons@gmail.com._**
