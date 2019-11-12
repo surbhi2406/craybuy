@@ -1,6 +1,6 @@
 ---
 layout: default
-date: 2019-10-31 18:30:00 +0000
+date: 2019-10-31T18:30:00.000+00:00
 image: ''
 title: About Us
 description: About Us | CrayBuy
