@@ -1,6 +1,6 @@
 ---
 - name: Contact Us
-  link: ''
+  link: "/contact-us"
   links: []
 - name: About Us
   link: "/about-us"
