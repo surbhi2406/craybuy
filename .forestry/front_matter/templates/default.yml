@@ -45,6 +45,7 @@ fields:
   label: OG-Image
   default: "/assets/logo.jpg"
 pages:
+- contact-us.md
 - about-us.md
 - about-us.md
 - 404.md
