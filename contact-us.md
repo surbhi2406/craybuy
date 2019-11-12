@@ -9,4 +9,4 @@ description: Contact-Us
 ---
 Please mail your feedback on **_craybuycoupons@gmail.com._**
 
-We will try to respond it as swiftly as possible. 
+We will try to respond to it as swiftly as possible.
