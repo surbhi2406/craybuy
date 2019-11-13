@@ -38,6 +38,7 @@ defaults:
     layout: default
 plugins:
 - jekyll-seo-tag
+- jekyll-last-modified-at
 - jekyll-github-metadata
 - jekyll-redirect-from
 - jekyll-admin

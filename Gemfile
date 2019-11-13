@@ -17,6 +17,7 @@ gem "github-pages", group: :jekyll_plugins
 # If you have any plugins, put them here!
 group :jekyll_plugins do
   gem "jekyll-seo-tag"
+  gem "jekyll-last-modified-at"
   gem "jekyll-github-metadata"
   gem "jekyll-redirect-from"
   gem "jekyll-admin"

@@ -26,3 +26,6 @@
 - name: Contact Us
   link: "/contact-us"
   links: []
+- name: FAQs
+  link: "/faqs"
+  links: []
