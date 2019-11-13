@@ -46,6 +46,7 @@ fields:
   default: "/assets/logo.jpg"
 pages:
 - faqs.md
+- faqs.md
 - contact-us.md
 - about-us.md
 - contact-us.md
