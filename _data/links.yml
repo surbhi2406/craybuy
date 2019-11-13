@@ -1,6 +1,6 @@
 ---
 - name: FAQs
-  link: "/FAQs/"
+  link: "/faqs/"
   links: []
 - name: About Us
   link: "/about-us"
