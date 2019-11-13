@@ -1,7 +1,4 @@
 ---
-- name: FAQs
-  link: "/faqs"
-  links: []
 - name: About Us
   link: "/about-us"
   links: []
@@ -28,4 +25,7 @@
   link: ''
 - name: Contact Us
   link: "/contact-us"
+  links: []
+- name: FAQs
+  link: "/faqs"
   links: []
