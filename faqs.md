@@ -2,7 +2,6 @@
 layout: default
 date: 2019-11-13 06:11:44 +0000
 image: "/assets/logo.jpg"
-permalink: FAQ
 title: FAQs
 description: 'FAQs- Frequently Asked Questions '
 
