@@ -1,4 +1,7 @@
 ---
+- name: FAQs
+  link: "/FAQs/"
+  links: []
 - name: About Us
   link: "/about-us"
   links: []
